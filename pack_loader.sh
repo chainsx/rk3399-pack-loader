@@ -1,16 +1,16 @@
 # Functions:
 # pack_loader_image
 
-#source functions/common.sh
+source functions/common.sh
 
 
 pack_loader_image()
 {
     # clean
-    rm -f ${DIR}/rk3399_loader.bin
-    rm -f ${DIR}/idbloader.img
-    rm -f ${DIR}/uboot.img
-    rm -f ${DIR}/trust.img
+    rm -f ${NANOPI4_DISTRO}/rk3399_loader.bin
+    rm -f ${NANOPI4_DISTRO}/idbloader.img
+    rm -f ${NANOPI4_DISTRO}/uboot.img
+    rm -f ${NANOPI4_DISTRO}/trust.img
 
     local rkbin_tools=${BUILD}/rkbin/tools
     cd ${BUILD}/rkbin
@@ -38,6 +38,6 @@ pack_loader_image()
 
     # distro
     echo
-    cp -v rk3399_loader_*.bin ${DIR}/rk3399_loader.bin
-    cp -v idbloader.img uboot.img trust.img ${DIR}/
+    cp -v rk3399_loader_*.bin ${NANOPI4_DISTRO}/rk3399_loader.bin
+    cp -v idbloader.img uboot.img trust.img ${NANOPI4_DISTRO}/
 }
